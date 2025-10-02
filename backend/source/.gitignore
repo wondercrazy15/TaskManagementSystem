@@ -1,0 +1,52 @@
+
+---
+
+
+For a **.NET backend project**, use the following:
+
+```gitignore
+# Build
+bin/
+obj/
+out/
+*.exe
+*.dll
+*.pdb
+*.log
+*.cache
+*.vspscc
+*.pubxml
+
+# User-specific
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code / Visual Studio
+.vscode/
+.vs/
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+project.lock.json
+project.fragment.lock.json
+
+# EF Core Migrations Snapshot
+Migrations/
+
+# Environment & Config
+appsettings.Development.json
+appsettings.Local.json
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test Coverage
+coverage/
+TestResults/
