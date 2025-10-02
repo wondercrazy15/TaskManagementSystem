@@ -1,9 +1,7 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.DependencyInjection;
 using TaskManagement.Domain.UserDetail;
 using TaskManagement.Domain.UserDetails;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace TaskManagement.EF.DataConfigurations
 {
@@ -19,13 +17,11 @@ namespace TaskManagement.EF.DataConfigurations
             var adminPassword = "Admin@123";
             var adminRole = "Admin";
 
-            // 1. Create role if not exists
             if (!await roleManager.RoleExistsAsync(adminRole))
             {
                 await roleManager.CreateAsync(new IdentityRole(adminRole));
             }
 
-            // 2. Create IdentityUser if not exists
             var identityAdmin = await userManager.FindByEmailAsync(adminEmail);
             if (identityAdmin == null)
             {
@@ -39,11 +35,9 @@ namespace TaskManagement.EF.DataConfigurations
                 if (!result.Succeeded)
                     throw new Exception($"Failed to create admin user: {string.Join(", ", result.Errors.Select(e => e.Description))}");
 
-                // Assign role
                 await userManager.AddToRoleAsync(identityAdmin, adminRole);
             }
 
-            // 3. Create custom User table entry if not exists
             var customAdmin = await usersService.GetUserByIdAsync(Guid.Parse(identityAdmin.Id));
             if (customAdmin == null)
             {

@@ -15,32 +15,6 @@ namespace TaskManagementWebApi.Models.User
         /// </summary>
         public string Email { get; set; } = String.Empty;
 
-        ///// <summary>
-        ///// Phone Number
-        /// </summary>
-        //public string PhoneNumber { get; set; } = String.Empty;
-
-        ///// <summary>
-        ///// First Name
-        ///// </summary>
-        //public string FirstName { get; set; } = String.Empty;
-
-        ///// <summary>
-        ///// Last Name
-        ///// </summary>
-        //public string LastName { get; set; } = String.Empty;
-
-        ///// <summary>
-        ///// Date Of Birth
-        ///// </summary>
-        //public string DateOfBirth { get; set; } = String.Empty;
-
-        ///// <summary>
-        ///// Profile Image
-        ///// </summary>
-        //public string? ProfileImage { get; set; }
-
-
         /// <summary>
         /// Role
         /// </summary>
