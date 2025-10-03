@@ -35,8 +35,6 @@ packages/
 project.lock.json
 project.fragment.lock.json
 
-# EF Core Migrations Snapshot
-Migrations/
 
 # Environment & Config
 appsettings.Development.json
